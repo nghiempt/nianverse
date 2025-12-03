@@ -1,205 +1,257 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react"
+import { Card, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { 
-  CheckCircle2, 
-  Clock, 
-  AlertCircle, 
-  TrendingUp,
-  Users,
-  ListTodo
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog"
+import {
+  CheckCircle2,
+  Clock,
+  AlertCircle,
+  ListTodo,
+  Plus,
+  Trash2
 } from "lucide-react"
 
-export default function AdminDashboard() {
+interface TodoItem {
+  id: string
+  text: string
+  badge: string
+  completed: boolean
+}
+
+interface CategoryTodos {
+  [key: string]: TodoItem[]
+}
+
+export default function SelfPage() {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [newTodoText, setNewTodoText] = useState("")
+  const [selectedBadge, setSelectedBadge] = useState("default")
+  const [todos, setTodos] = useState<CategoryTodos>({})
+
+  const badgeOptions = [
+    { value: "default", label: "Mặc định", variant: "default" as const },
+    { value: "secondary", label: "Phụ", variant: "secondary" as const },
+    { value: "destructive", label: "Quan trọng", variant: "destructive" as const },
+    { value: "outline", label: "Thường", variant: "outline" as const },
+  ]
+
+  const addTodo = () => {
+    if (!newTodoText.trim() || !selectedCategory) return
+
+    const newTodo: TodoItem = {
+      id: Date.now().toString(),
+      text: newTodoText,
+      badge: selectedBadge,
+      completed: false,
+    }
+
+    setTodos(prev => ({
+      ...prev,
+      [selectedCategory]: [...(prev[selectedCategory] || []), newTodo]
+    }))
+
+    setNewTodoText("")
+    setSelectedBadge("default")
+  }
+
+  const deleteTodo = (todoId: string) => {
+    if (!selectedCategory) return
+    setTodos(prev => ({
+      ...prev,
+      [selectedCategory]: prev[selectedCategory].filter(todo => todo.id !== todoId)
+    }))
+  }
+
+  const toggleTodo = (todoId: string) => {
+    if (!selectedCategory) return
+    setTodos(prev => ({
+      ...prev,
+      [selectedCategory]: prev[selectedCategory].map(todo =>
+        todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
+      )
+    }))
+  }
+
   const stats = [
     {
-      title: "Tổng Task",
-      value: "24",
-      change: "+12%",
+      title: "Mindset & Tư duy",
       icon: ListTodo,
       color: "text-blue-600",
       bgColor: "bg-blue-50",
     },
     {
-      title: "Đang thực hiện",
-      value: "8",
-      change: "+5%",
+      title: "Cảm xúc",
       icon: Clock,
       color: "text-yellow-600",
       bgColor: "bg-yellow-50",
     },
     {
-      title: "Hoàn thành",
-      value: "14",
-      change: "+18%",
+      title: "Mục tiêu cá nhân",
       icon: CheckCircle2,
       color: "text-green-600",
       bgColor: "bg-green-50",
     },
     {
-      title: "Quá hạn",
-      value: "2",
-      change: "-25%",
+      title: "Self-Reflection / Nhật ký",
       icon: AlertCircle,
       color: "text-red-600",
       bgColor: "bg-red-50",
     },
-  ]
-
-  const recentTasks = [
     {
-      id: 1,
-      title: "Thiết kế UI Dashboard",
-      status: "completed",
-      priority: "high",
-      assignee: "Nguyễn Văn A",
-      dueDate: "2025-12-01",
+      title: "Niềm tin – Giá trị sống",
+      icon: AlertCircle,
+      color: "text-red-600",
+      bgColor: "bg-red-50",
     },
     {
-      id: 2,
-      title: "Tích hợp API Backend",
-      status: "in-progress",
-      priority: "high",
-      assignee: "Trần Thị B",
-      dueDate: "2025-12-05",
+      title: "Thói quen cá nhân (Habit)",
+      icon: AlertCircle,
+      color: "text-red-600",
+      bgColor: "bg-red-50",
     },
     {
-      id: 3,
-      title: "Viết Unit Test",
-      status: "in-progress",
-      priority: "medium",
-      assignee: "Lê Văn C",
-      dueDate: "2025-12-07",
+      title: "Giấc ngủ – Stress – Năng lượng",
+      icon: AlertCircle,
+      color: "text-red-600",
+      bgColor: "bg-red-50",
     },
     {
-      id: 4,
-      title: "Review Code Pull Request",
-      status: "pending",
-      priority: "low",
-      assignee: "Phạm Thị D",
-      dueDate: "2025-12-03",
-    },
-  ]
-
-  const getStatusBadge = (status: string) => {
-    const statusConfig = {
-      completed: { label: "Hoàn thành", variant: "default" as const, className: "bg-green-100 text-green-800" },
-      "in-progress": { label: "Đang làm", variant: "secondary" as const, className: "bg-blue-100 text-blue-800" },
-      pending: { label: "Chờ xử lý", variant: "outline" as const, className: "bg-gray-100 text-gray-800" },
+      title: "Sức khỏe tinh thần",
+      icon: AlertCircle,
+      color: "text-red-600",
+      bgColor: "bg-red-50",
     }
-    const config = statusConfig[status as keyof typeof statusConfig]
-    return <Badge className={config.className}>{config.label}</Badge>
-  }
-
-  const getPriorityBadge = (priority: string) => {
-    const priorityConfig = {
-      high: { label: "Cao", className: "bg-red-100 text-red-800" },
-      medium: { label: "Trung bình", className: "bg-yellow-100 text-yellow-800" },
-      low: { label: "Thấp", className: "bg-gray-100 text-gray-800" },
-    }
-    const config = priorityConfig[priority as keyof typeof priorityConfig]
-    return <Badge variant="outline" className={config.className}>{config.label}</Badge>
-  }
+  ]
 
   return (
     <div className="space-y-6">
-      {/* Stats Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {stats.map((stat) => {
+        {stats.map((stat, index) => {
           const Icon = stat.icon
+          const categoryTodos = todos[stat.title] || []
           return (
-            <Card key={stat.title}>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium text-gray-600">
-                  {stat.title}
-                </CardTitle>
+            <Card
+              key={index}
+              className="cursor-pointer hover:shadow-lg transition-shadow"
+              onClick={() => setSelectedCategory(stat.title)}
+            >
+              <CardHeader className="flex flex-row items-center justify-between space-y-0">
+                <div className="space-y-2 flex-1">
+                  <CardTitle className="text-sm font-medium text-gray-600">
+                    {stat.title}
+                  </CardTitle>
+                  {categoryTodos.length > 0 && (
+                    <div className="text-xs text-gray-500">
+                      {categoryTodos.filter(t => t.completed).length} / {categoryTodos.length} hoàn thành
+                    </div>
+                  )}
+                </div>
                 <div className={`${stat.bgColor} p-2 rounded-lg`}>
                   <Icon className={`h-4 w-4 ${stat.color}`} />
                 </div>
               </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stat.value}</div>
-                <p className="text-xs text-muted-foreground mt-1">
-                  <span className={stat.change.startsWith('+') ? 'text-green-600' : 'text-red-600'}>
-                    {stat.change}
-                  </span>
-                  {" "}so với tháng trước
-                </p>
-              </CardContent>
             </Card>
           )
         })}
       </div>
 
-      {/* Recent Tasks */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Task gần đây</CardTitle>
-          <CardDescription>Danh sách các task được cập nhật gần đây nhất</CardDescription>
-        </CardHeader>
-        <CardContent>
+      <Dialog open={selectedCategory !== null} onOpenChange={(open) => !open && setSelectedCategory(null)}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>{selectedCategory}</DialogTitle>
+            <DialogDescription>
+              Quản lý các công việc của bạn
+            </DialogDescription>
+          </DialogHeader>
+
           <div className="space-y-4">
-            {recentTasks.map((task) => (
-              <div
-                key={task.id}
-                className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                <div className="flex-1 space-y-1">
-                  <div className="flex items-center gap-3">
-                    <h4 className="font-medium text-gray-900">{task.title}</h4>
-                    {getStatusBadge(task.status)}
-                    {getPriorityBadge(task.priority)}
-                  </div>
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <span className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
-                      {task.assignee}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {task.dueDate}
-                    </span>
-                  </div>
+            {/* Add Todo Form */}
+            <div className="space-y-3 border-b pb-4">
+              <Input
+                placeholder="Nhập công việc mới..."
+                value={newTodoText}
+                onChange={(e) => setNewTodoText(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && addTodo()}
+              />
+
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-sm text-gray-600">Badge:</span>
+                {badgeOptions.map((option) => (
+                  <Badge
+                    key={option.value}
+                    variant={option.variant}
+                    className={`cursor-pointer ${selectedBadge === option.value ? 'ring-2 ring-offset-2 ring-blue-500' : ''}`}
+                    onClick={() => setSelectedBadge(option.value)}
+                  >
+                    {option.label}
+                  </Badge>
+                ))}
+              </div>
+
+              <Button onClick={addTodo} className="w-full">
+                <Plus className="h-4 w-4 mr-2" />
+                Thêm công việc
+              </Button>
+            </div>
+
+            {/* Todo List */}
+            <div className="space-y-2">
+              {selectedCategory && todos[selectedCategory]?.length > 0 ? (
+                todos[selectedCategory].map((todo) => {
+                  const badgeVariant = badgeOptions.find(b => b.value === todo.badge)?.variant || "default"
+                  return (
+                    <div
+                      key={todo.id}
+                      className="flex items-center gap-3 p-3 border rounded-lg hover:bg-gray-50"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={todo.completed}
+                        onChange={() => toggleTodo(todo.id)}
+                        className="h-4 w-4 rounded"
+                      />
+                      <span className={`flex-1 ${todo.completed ? 'line-through text-gray-400' : ''}`}>
+                        {todo.text}
+                      </span>
+                      <Badge variant={badgeVariant}>
+                        {badgeOptions.find(b => b.value === todo.badge)?.label}
+                      </Badge>
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        onClick={() => deleteTodo(todo.id)}
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  )
+                })
+              ) : (
+                <div className="text-center text-gray-500 py-8">
+                  Chưa có công việc nào
                 </div>
-              </div>
-            ))}
+              )}
+            </div>
           </div>
-        </CardContent>
-      </Card>
 
-      {/* Activity Chart Placeholder */}
-      <div className="grid gap-4 md:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <CardTitle>Tiến độ theo tuần</CardTitle>
-            <CardDescription>Số lượng task hoàn thành 7 ngày qua</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="h-[200px] flex items-center justify-center border-2 border-dashed border-gray-200 rounded-lg">
-              <div className="text-center text-gray-400">
-                <TrendingUp className="w-12 h-12 mx-auto mb-2" />
-                <p className="text-sm">Biểu đồ tiến độ</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Phân bổ theo độ ưu tiên</CardTitle>
-            <CardDescription>Task được phân loại theo mức độ ưu tiên</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="h-[200px] flex items-center justify-center border-2 border-dashed border-gray-200 rounded-lg">
-              <div className="text-center text-gray-400">
-                <ListTodo className="w-12 h-12 mx-auto mb-2" />
-                <p className="text-sm">Biểu đồ phân bổ</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setSelectedCategory(null)}>
+              Đóng
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

@@ -2,31 +2,75 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { 
-  LayoutDashboard, 
-  ListTodo, 
-  PlusCircle,
-  Menu
+import {
+  Menu,
+  Blocks,
+  Stethoscope,
+  CircleDollarSign,
+  BriefcaseBusiness,
+  House,
+  Handshake,
+  TreePalm,
+  LineSquiggle,
+  Settings,
+  Component
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
+import Image from "next/image"
+import { IMAGES } from "@/utils/images"
 
 const sidebarItems = [
   {
-    title: "Dashboard",
+    title: "Self",
     href: "/admin",
-    icon: LayoutDashboard,
+    icon: Blocks,
   },
   {
-    title: "Quản lý Task",
-    href: "/admin/tasks",
-    icon: ListTodo,
+    title: "Health",
+    href: "/admin/health",
+    icon: Stethoscope,
   },
   {
-    title: "Tạo Task",
-    href: "/admin/create-task",
-    icon: PlusCircle,
+    title: "Finance",
+    href: "/admin/finance",
+    icon: CircleDollarSign,
   },
+  {
+    title: "Work",
+    href: "/admin/work",
+    icon: BriefcaseBusiness,
+  },
+  {
+    title: "Home",
+    href: "/admin/home",
+    icon: House,
+  },
+  {
+    title: "Relationship",
+    href: "/admin/relationship",
+    icon: Handshake,
+  },
+  {
+    title: "Growth",
+    href: "/admin/growth",
+    icon: TreePalm,
+  },
+  {
+    title: "Digital",
+    href: "/admin/digital",
+    icon: Component,
+  },
+  {
+    title: "Creativity",
+    href: "/admin/creativity",
+    icon: LineSquiggle,
+  },
+  {
+    title: "Operation",
+    href: "/admin/operation",
+    icon: Settings,
+  }
 ]
 
 export default function AdminLayout({
@@ -39,7 +83,6 @@ export default function AdminLayout({
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Sidebar */}
       <aside
         className={cn(
           "fixed left-0 top-0 z-40 h-screen transition-all duration-300 bg-white border-r border-gray-200",
@@ -47,25 +90,21 @@ export default function AdminLayout({
         )}
       >
         <div className="flex flex-col h-full">
-          {/* Header */}
           <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200">
             {sidebarOpen && (
               <h1 className="text-xl font-bold text-gray-800">Admin Panel</h1>
             )}
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
             >
               <Menu className="w-5 h-5" />
             </button>
           </div>
-
-          {/* Navigation */}
           <nav className="flex-1 px-3 py-4 space-y-1">
             {sidebarItems.map((item) => {
               const isActive = pathname === item.href
               const Icon = item.icon
-
               return (
                 <Link
                   key={item.href}
@@ -85,23 +124,26 @@ export default function AdminLayout({
               )
             })}
           </nav>
-
-          {/* Footer */}
           <div className="p-4 border-t border-gray-200">
             <div className={cn(
               "flex items-center gap-3",
               !sidebarOpen && "justify-center"
             )}>
-              <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-medium">
-                A
-              </div>
+              <Image
+                className="dark:invert"
+                src={IMAGES.LOGO}
+                alt="Logo"
+                width={40}
+                height={0}
+                priority
+              />
               {sidebarOpen && (
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-gray-700 truncate">
-                    Admin User
+                    Nian Pham
                   </p>
                   <p className="text-xs text-gray-500 truncate">
-                    admin@nianverse.com
+                    me@nianverse.org
                   </p>
                 </div>
               )}
@@ -109,22 +151,17 @@ export default function AdminLayout({
           </div>
         </div>
       </aside>
-
-      {/* Main Content */}
       <main
         className={cn(
           "transition-all duration-300",
           sidebarOpen ? "ml-64" : "ml-20"
         )}
       >
-        {/* Top Bar */}
         <div className="sticky top-0 z-30 h-16 bg-white border-b border-gray-200 flex items-center px-6">
           <h2 className="text-lg font-semibold text-gray-800">
             {sidebarItems.find(item => item.href === pathname)?.title || "Admin"}
           </h2>
         </div>
-
-        {/* Page Content */}
         <div className="p-6">
           {children}
         </div>

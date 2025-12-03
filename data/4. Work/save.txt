@@ -1,0 +1,82 @@
+# Lumination
+> Zeedata
+- Check all account: Prod, Stag, Dev
+- Check Chat Widget
+- Check APIs public
+- Bcloud
+- Agent Property
+- Multi Modules
+- Widget Extension
+- FAQs Page
+> Reward System
+- Proposal
+> AI RAG
+- Agentic RAG
+- Update RAG
+- Knowledge Graph
+> VTVPrime
+- Update process transcript for long video
+> HSU
+- Test Zalo Module
+> Customer Care
+- New UI
+- Wrap-up automate logic
+> OCB Supershop
+- Clone siri voice
+- Create product by OCR
+
+
+# Nianverse
+> in ảnh hạ thu > link drive >> list task cần làm
+> ecoka
+> ielts viet
+> nian os > .... ?? > paper & pitching > take care proposal
+> app đi chùa
+
+
+> mỗi dự án phải có: info, roadmap, timeline, task, resource
+
+
+
+# ZAIC 2025
+
+# EMNLP 2025
+
+
+
+
+
+HSU accounts
+Superadmin (Toàn quyền)
+
+superadmin@hoasen.edu.vn
+
+Manager L1 (Phó Hiệu Trưởng)
+
+manager.l1@hoasen.edu.vn
+
+Manager L2 (Trưởng Phòng Khu Vực)
+
+manager.l2@hoasen.edu.vn
+
+Marketing Manager (Quản Lý Marketing)
+
+marketing.manager@hoasen.edu.vn
+
+Deputy Manager 1 (Phó Quản Lý)
+
+deputy.manager1@hoasen.edu.vn
+
+Deputy Manager 2 (Phó Quản Lý)
+
+deputy.manager2@hoasen.edu.vn
+
+CVTS (Cán Bộ Tuyển Sinh)
+
+cvts1@hoasen.edu.vn
+
+CTV (Cộng Tác Viên)
+
+ctv1@hoasen.edu.vn
+
+(Mật khẩu: password123)
