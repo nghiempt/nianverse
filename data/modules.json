@@ -81,19 +81,22 @@
         "id": "daily_soc_1",
         "title": "Messenger",
         "status": false,
-        "image": "/icons/messenger.svg"
+        "image": "/icons/messenger.svg",
+        "link": "https://www.messenger.com"
       },
       {
         "id": "daily_soc_2",
         "title": "Zalo",
         "status": false,
-        "image": "/icons/zalo.svg"
+        "image": "/icons/zalo.svg",
+        "link": "https://chat.zalo.me"
       },
       {
         "id": "daily_soc_3",
         "title": "Teams",
         "status": false,
-        "image": "/icons/teams.svg"
+        "image": "/icons/teams.svg",
+        "link": "https://teams.microsoft.com"
       }
     ],
     "project": [
@@ -699,7 +702,8 @@
         "id": "repo_com_1",
         "title": "Key",
         "status": false,
-        "image": "/icons/key.svg"
+        "image": "/icons/key.svg",
+        "link": "https://www.notion.so/Key-2ce358208ac281d3be30e7bc101de128"
       },
       {
         "id": "repo_com_2",

@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Ban, CheckCheck, Pencil, Settings2, Trash2 } from "lucide-react";
+import { ArrowUpRight, Ban, CheckCheck, ExternalLink, Pencil, Settings2, Trash2 } from "lucide-react";
 
 interface ModuleItem {
     id: string;
     title: string;
     status: boolean;
     image: string;
+    link?: string;
 }
 
 interface ModuleItemProps {
@@ -126,6 +127,20 @@ export default function ModuleItem({
                 : "border-gray-200 bg-white hover:border-gray-500"
                 }`}
         >
+            {/* Direct Link Button - Top Right Corner */}
+            {item.link && item.link.trim() !== "" && (
+                <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute -top-2 -right-2 z-10 flex h-7 w-7 items-center justify-center rounded-xl bg-gray-700 text-white shadow-md transition-all hover:bg-gray-800"
+                    title="Open link"
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    <ArrowUpRight size={14} />
+                </a>
+            )}
+
             {/* Leading Icon */}
             <div className="flex-shrink-0">
                 <div className="relative h-6 w-6">
