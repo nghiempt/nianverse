@@ -1,39 +1,73 @@
-import ComponentCard from "@/components/common/ComponentCard";
-import Input from "@/components/common/InputField";
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Running",
-  description: "This is Next.js",
-};
+import { useEffect, useState } from "react";
+import CategorySection from "@/components/modules/CategorySection";
+
+interface ModuleItem {
+  id: string;
+  title: string;
+  status: boolean;
+  image: string;
+}
+
+interface RunningData {
+  working: ModuleItem[];
+  life: ModuleItem[];
+}
 
 export default function RunningClient() {
+  const [data, setData] = useState<RunningData>({
+    working: [],
+    life: [],
+  });
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("/api/modules?module=running");
+      if (response.ok) {
+        const result = await response.json();
+        setData(result);
+      }
+    } catch (error) {
+      console.error("Failed to fetch running data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center p-8">
+        <div className="text-gray-500">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div className="space-y-6">
-          <ComponentCard title="Working">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Hạ Thu Task"} />
-                <Input type="text" defaultValue={"Lumination Task"} />
-                <Input type="text" defaultValue={"Nianverse Task"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Working"
+            items={data.working}
+            module="running"
+            category="working"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Life">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Thuế cá nhân"} />
-                <Input type="text" defaultValue={"Track Member Service & Linked Honey"} />
-                <Input type="text" defaultValue={"Track Hospital"} />
-                <Input type="text" defaultValue={"Capture Cards"} />
-                <Input type="text" defaultValue={"ENW492 Return"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Life"
+            items={data.life}
+            module="running"
+            category="life"
+            onUpdate={fetchData}
+          />
         </div>
       </div>
     </div>

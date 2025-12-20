@@ -1,67 +1,95 @@
-import ComponentCard from "@/components/common/ComponentCard";
-import Input from "@/components/common/InputField";
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Daily",
-  description: "This is Next.js",
-};
+import { useEffect, useState } from "react";
+import CategorySection from "@/components/modules/CategorySection";
+
+interface ModuleItem {
+  id: string;
+  title: string;
+  status: boolean;
+  image: string;
+}
+
+interface DailyData {
+  social: ModuleItem[];
+  project: ModuleItem[];
+  purge: ModuleItem[];
+  other: ModuleItem[];
+}
 
 export default function DailyClient() {
+  const [data, setData] = useState<DailyData>({
+    social: [],
+    project: [],
+    purge: [],
+    other: [],
+  });
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("/api/modules?module=daily");
+      if (response.ok) {
+        const result = await response.json();
+        setData(result);
+      }
+    } catch (error) {
+      console.error("Failed to fetch daily data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center p-8">
+        <div className="text-gray-500">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div className="space-y-6">
-          <ComponentCard title="Social">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Messenger"} />
-                <Input type="text" defaultValue={"Zalo"} />
-                <Input type="text" defaultValue={"Teams"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Social"
+            items={data.social}
+            module="daily"
+            category="social"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Project">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Ielts Việt"} />
-                <Input type="text" defaultValue={"Ecoka Handicraft"} />
-                <Input type="text" defaultValue={"In Ảnh Hạ Thu"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Project"
+            items={data.project}
+            module="daily"
+            category="project"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Purge">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Browser"} />
-                <Input type="text" defaultValue={"Cloud"} />
-                <Input type="text" defaultValue={"Note"} />
-                <Input type="text" defaultValue={"Mac App"} />
-                <Input type="text" defaultValue={"Mac Storage"} />
-                <Input type="text" defaultValue={"Phone Storage"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Purge"
+            items={data.purge}
+            module="daily"
+            category="purge"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Other">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Track Email"} />
-                <Input type="text" defaultValue={"TrackFinance"} />
-                <Input type="text" defaultValue={"Track News"} />
-                <Input type="text" defaultValue={"Track Saved"} />
-                <Input type="text" defaultValue={"Track Harmony"} />
-                <Input type="text" defaultValue={"English Practice"} />
-                <Input type="text" defaultValue={"Explore Activities"} />
-                <Input type="text" defaultValue={"Loop Org to fill Running"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Other"
+            items={data.other}
+            module="daily"
+            category="other"
+            onUpdate={fetchData}
+          />
         </div>
       </div>
     </div>

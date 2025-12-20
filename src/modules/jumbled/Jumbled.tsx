@@ -1,59 +1,76 @@
-import ComponentCard from "@/components/common/ComponentCard";
-import Input from "@/components/common/InputField";
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Jumbled",
-  description: "This is Next.js",
-};
+import { useEffect, useState } from "react";
+import CategorySection from "@/components/modules/CategorySection";
+
+interface ModuleItem {
+  id: string;
+  title: string;
+  status: boolean;
+  image: string;
+}
+
+interface JumbledData {
+  work: ModuleItem[];
+  personal: ModuleItem[];
+}
 
 export default function JumbledClient() {
+  const [data, setData] = useState<JumbledData>({
+    work: [],
+    personal: [],
+  });
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("/api/modules?module=jumbled");
+      if (response.ok) {
+        const result = await response.json();
+        setData(result);
+      }
+    } catch (error) {
+      console.error("Failed to fetch jumbled data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center p-8">
+        <div className="text-gray-500">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div className="space-y-6">
-          <ComponentCard title="Work">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"List Places to Travel"} />
-                <Input type="text" defaultValue={"List Places to Food"} />
-                <Input type="text" defaultValue={"List Films to Watch"} />
-                <Input type="text" defaultValue={"List Sports to Play"} />
-                <Input type="text" defaultValue={"Nian Brand & Nian Channel"} />
-                <Input type="text" defaultValue={"Inside/Outside Services"} />
-                <Input type="text" defaultValue={"Track Relationships"} />
-                <Input type="text" defaultValue={"Các keyword cần nắm (PIS, SAS, …)"} />
-                <Input type="text" defaultValue={"Follow Zalo Contest → Recap Full Workflow & Saved Resource"} />
-                <Input type="text" defaultValue={"Hackathon Launch: Google Tunix Hack"} />
-                <Input type="text" defaultValue={"Vesuvius Challenge - Surface Detection"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Work"
+            items={data.work}
+            module="jumbled"
+            category="work"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Personal">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Kích hoạt app TPBank của Honey"} />
-                <Input type="text" defaultValue={"Kích hoạt app TPBank của Nghiêm"} />
-                <Input type="text" defaultValue={"Check Hàng Ship"} />
-                <Input type="text" defaultValue={"Keyword: Chain of Thought, Hacker $1"} />
-                <Input type="text" defaultValue={"Collect Channels"} />
-                <Input type="text" defaultValue={"Collect Resource"} />
-                <Input type="text" defaultValue={"Collect Full Tools AI"} />
-                <Input type="text" defaultValue={"Cover JD All Roles"} />
-                <Input type="text" defaultValue={"Mua thêm sách (SEO, Start-up, Selfhelp"} />
-                <Input type="text" defaultValue={"Collect Category in Book Store"} />
-                <Input type="text" defaultValue={"Handle Wifi (Pass, Speed"} />
-                <Input type="text" defaultValue={"Control Device in House"} />
-                <Input type="text" defaultValue={"SEO basic for Website"} />
-                <Input type="text" defaultValue={"Update Avatar All Service + Project Name"} />
-                <Input type="text" defaultValue={"Đòi 2m Shopee IATT"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Personal"
+            items={data.personal}
+            module="jumbled"
+            category="personal"
+            onUpdate={fetchData}
+          />
         </div>
       </div>
     </div>
   );
 }
+

@@ -1,32 +1,62 @@
-import ComponentCard from "@/components/common/ComponentCard";
-import Input from "@/components/common/InputField";
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Health",
-  description: "This is Next.js",
-};
+import { useEffect, useState } from "react";
+import CategorySection from "@/components/modules/CategorySection";
+
+interface ModuleItem {
+  id: string;
+  title: string;
+  status: boolean;
+  image: string;
+}
+
+interface HealthData {
+  health: ModuleItem[];
+}
 
 export default function HealthClient() {
+  const [data, setData] = useState<HealthData>({
+    health: [],
+  });
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("/api/modules?module=health");
+      if (response.ok) {
+        const result = await response.json();
+        setData(result);
+      }
+    } catch (error) {
+      console.error("Failed to fetch health data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center p-8">
+        <div className="text-gray-500">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div className="space-y-6">
-          <ComponentCard title="Health">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Họ & Tên: Phạm Thanh Nghiêm"} />
-                <Input type="text" defaultValue={"Ngày sinh: 20/01/2002"} />
-                <Input type="text" defaultValue={"Giới tính: Nam"} />
-                <Input type="text" defaultValue={"Số điện thoại: 0911.558.539"} />
-                <Input type="text" defaultValue={"Quê quán: P. Long Bình, TP. Cần Thơ"} />
-                <Input type="text" defaultValue={"Chiều cao: 1m65"} />
-                <Input type="text" defaultValue={"Cân nặng: 90kg"} />
-                <Input type="text" defaultValue={"BMI: 33.1 → Béo phì độ 2"} />
-                <Input type="text" defaultValue={"Medical Record: chưa có"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Health"
+            items={data.health}
+            module="health"
+            category="health"
+            onUpdate={fetchData}
+          />
         </div>
       </div>
     </div>

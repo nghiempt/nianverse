@@ -1,0 +1,1132 @@
+{
+  "activity": {
+    "event_workshop": [
+      {
+        "id": "act_ew_1",
+        "title": "?",
+        "status": false,
+        "image": "/icons/event.svg"
+      }
+    ],
+    "contest": [
+      {
+        "id": "act_ct_1",
+        "title": "ZALO AI 2025",
+        "status": false,
+        "image": "/icons/contest.svg"
+      }
+    ],
+    "certificate": [
+      {
+        "id": "act_cert_1",
+        "title": "?",
+        "status": false,
+        "image": "/icons/certificate.svg"
+      }
+    ]
+  },
+  "anthology": {
+    "anthology": [
+      {
+        "id": "anth_1",
+        "title": "Encyclopedia",
+        "status": false,
+        "image": "/icons/book.svg"
+      },
+      {
+        "id": "anth_2",
+        "title": "Front-end",
+        "status": false,
+        "image": "/icons/code.svg"
+      }
+    ]
+  },
+  "biography": {
+    "biography": [
+      {
+        "id": "bio_1",
+        "title": "Strengths",
+        "status": false,
+        "image": "/icons/strength.svg"
+      },
+      {
+        "id": "bio_2",
+        "title": "Social Network",
+        "status": false,
+        "image": "/icons/social.svg"
+      },
+      {
+        "id": "bio_3",
+        "title": "Password",
+        "status": false,
+        "image": "/icons/password.svg"
+      },
+      {
+        "id": "bio_4",
+        "title": "Relationship",
+        "status": false,
+        "image": "/icons/relationship.svg"
+      },
+      {
+        "id": "bio_5",
+        "title": "Devices",
+        "status": false,
+        "image": "/icons/device.svg"
+      }
+    ]
+  },
+  "daily": {
+    "social": [
+      {
+        "id": "daily_soc_1",
+        "title": "Messenger",
+        "status": false,
+        "image": "/icons/messenger.svg"
+      },
+      {
+        "id": "daily_soc_2",
+        "title": "Zalo",
+        "status": false,
+        "image": "/icons/zalo.svg"
+      },
+      {
+        "id": "daily_soc_3",
+        "title": "Teams",
+        "status": false,
+        "image": "/icons/teams.svg"
+      }
+    ],
+    "project": [
+      {
+        "id": "daily_proj_1",
+        "title": "Ielts Việt",
+        "status": false,
+        "image": "/icons/project.svg"
+      },
+      {
+        "id": "daily_proj_2",
+        "title": "Ecoka Handicraft",
+        "status": false,
+        "image": "/icons/project.svg"
+      },
+      {
+        "id": "daily_proj_3",
+        "title": "In Ảnh Hạ Thu",
+        "status": false,
+        "image": "/icons/project.svg"
+      }
+    ],
+    "purge": [
+      {
+        "id": "daily_purge_1",
+        "title": "Browser",
+        "status": false,
+        "image": "/icons/browser.svg"
+      },
+      {
+        "id": "daily_purge_2",
+        "title": "Cloud",
+        "status": false,
+        "image": "/icons/cloud.svg"
+      },
+      {
+        "id": "daily_purge_3",
+        "title": "Note",
+        "status": false,
+        "image": "/icons/note.svg"
+      },
+      {
+        "id": "daily_purge_4",
+        "title": "Mac App",
+        "status": false,
+        "image": "/icons/mac.svg"
+      },
+      {
+        "id": "daily_purge_5",
+        "title": "Mac Storage",
+        "status": false,
+        "image": "/icons/storage.svg"
+      },
+      {
+        "id": "daily_purge_6",
+        "title": "Phone Storage",
+        "status": false,
+        "image": "/icons/phone.svg"
+      }
+    ],
+    "other": [
+      {
+        "id": "daily_other_1",
+        "title": "Track Email",
+        "status": false,
+        "image": "/icons/email.svg"
+      },
+      {
+        "id": "daily_other_2",
+        "title": "Track Finance",
+        "status": false,
+        "image": "/icons/finance.svg"
+      },
+      {
+        "id": "daily_other_3",
+        "title": "Track News",
+        "status": false,
+        "image": "/icons/news.svg"
+      },
+      {
+        "id": "daily_other_4",
+        "title": "Track Saved",
+        "status": false,
+        "image": "/icons/saved.svg"
+      },
+      {
+        "id": "daily_other_5",
+        "title": "Track Harmony",
+        "status": false,
+        "image": "/icons/harmony.svg"
+      },
+      {
+        "id": "daily_other_6",
+        "title": "English Practice",
+        "status": false,
+        "image": "/icons/english.svg"
+      },
+      {
+        "id": "daily_other_7",
+        "title": "Explore Activities",
+        "status": false,
+        "image": "/icons/explore.svg"
+      },
+      {
+        "id": "daily_other_8",
+        "title": "Loop Org to fill Running",
+        "status": false,
+        "image": "/icons/loop.svg"
+      }
+    ]
+  },
+  "education": {
+    "ielts": [
+      {
+        "id": "edu_ielts_1",
+        "title": "?",
+        "status": false,
+        "image": "/icons/ielts.svg"
+      }
+    ],
+    "master_phd": [
+      {
+        "id": "edu_master_1",
+        "title": "?",
+        "status": false,
+        "image": "/icons/graduate.svg"
+      }
+    ],
+    "research": [
+      {
+        "id": "edu_research_1",
+        "title": "My papers",
+        "status": false,
+        "image": "/icons/paper.svg"
+      },
+      {
+        "id": "edu_research_2",
+        "title": "EMNLP 2025 - SLMs Benchmark",
+        "status": false,
+        "image": "/icons/paper.svg"
+      },
+      {
+        "id": "edu_research_3",
+        "title": "ACL 2026",
+        "status": false,
+        "image": "/icons/paper.svg"
+      }
+    ]
+  },
+  "finance": {
+    "wallet": [
+      {
+        "id": "fin_wallet_1",
+        "title": "?",
+        "status": false,
+        "image": "/icons/wallet.svg"
+      }
+    ],
+    "spending": [
+      {
+        "id": "fin_spend_1",
+        "title": "?",
+        "status": false,
+        "image": "/icons/spending.svg"
+      }
+    ],
+    "subscription": [
+      {
+        "id": "fin_sub_1",
+        "title": "FHappy (49k) ~ 10/01/2026",
+        "status": false,
+        "image": "/icons/subscription.svg"
+      },
+      {
+        "id": "fin_sub_2",
+        "title": "Shopee Vip (29k) ~ 09/01/2026",
+        "status": false,
+        "image": "/icons/shopee.svg"
+      },
+      {
+        "id": "fin_sub_3",
+        "title": "Youtube Premium (87k) ~ 09/01/2026",
+        "status": false,
+        "image": "/icons/youtube.svg"
+      },
+      {
+        "id": "fin_sub_4",
+        "title": "Google Business (100k) ~ 01/01/2026",
+        "status": false,
+        "image": "/icons/google.svg"
+      },
+      {
+        "id": "fin_sub_5",
+        "title": "Google Drive One 30GB (5k) ~ 07/01/2026",
+        "status": false,
+        "image": "/icons/drive.svg"
+      },
+      {
+        "id": "fin_sub_6",
+        "title": "Chat GPT Plus (100k) ~ ?/?/2025",
+        "status": false,
+        "image": "/icons/chatgpt.svg"
+      },
+      {
+        "id": "fin_sub_7",
+        "title": "Github Copilot (260k) ~ ?/?/2025",
+        "status": false,
+        "image": "/icons/github.svg"
+      },
+      {
+        "id": "fin_sub_8",
+        "title": "OpenAI ~ $2.85",
+        "status": false,
+        "image": "/icons/openai.svg"
+      },
+      {
+        "id": "fin_sub_9",
+        "title": "Runpod ~ $15",
+        "status": false,
+        "image": "/icons/server.svg"
+      },
+      {
+        "id": "fin_sub_10",
+        "title": "AWS ~ $37",
+        "status": false,
+        "image": "/icons/aws.svg"
+      },
+      {
+        "id": "fin_sub_11",
+        "title": "Spotify Premium",
+        "status": false,
+        "image": "/icons/spotify.svg"
+      }
+    ],
+    "linkage": [
+      {
+        "id": "fin_link_1",
+        "title": "iCloud + Liobank",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_2",
+        "title": "Github Copilot + Liobank",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_3",
+        "title": "Youtube + Momo",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_4",
+        "title": "Shopee + Shopee Pay",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_5",
+        "title": "Google Business + MB",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_6",
+        "title": "OpenAI + Liobank",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_7",
+        "title": "PayOS + MB",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_8",
+        "title": "Cloudflare + Paypal",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_9",
+        "title": "AWS + Liobank",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_10",
+        "title": "Google Play + Momo",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_11",
+        "title": "Runpod + Liobank",
+        "status": false,
+        "image": "/icons/link.svg"
+      },
+      {
+        "id": "fin_link_12",
+        "title": "GoogleOne + Momo",
+        "status": false,
+        "image": "/icons/link.svg"
+      }
+    ],
+    "membership": [
+      {
+        "id": "fin_mem_1",
+        "title": "Hải An Book Store",
+        "status": false,
+        "image": "/icons/membership.svg"
+      },
+      {
+        "id": "fin_mem_2",
+        "title": "Coffee Bean",
+        "status": false,
+        "image": "/icons/coffee.svg"
+      },
+      {
+        "id": "fin_mem_3",
+        "title": "Annam Gourment",
+        "status": false,
+        "image": "/icons/food.svg"
+      },
+      {
+        "id": "fin_mem_4",
+        "title": "Mai Son",
+        "status": false,
+        "image": "/icons/food.svg"
+      },
+      {
+        "id": "fin_mem_5",
+        "title": "Tam Son",
+        "status": false,
+        "image": "/icons/food.svg"
+      },
+      {
+        "id": "fin_mem_6",
+        "title": "Golden Gate",
+        "status": false,
+        "image": "/icons/food.svg"
+      },
+      {
+        "id": "fin_mem_7",
+        "title": "H&M",
+        "status": false,
+        "image": "/icons/shopping.svg"
+      },
+      {
+        "id": "fin_mem_8",
+        "title": "Uniqlo",
+        "status": false,
+        "image": "/icons/shopping.svg"
+      },
+      {
+        "id": "fin_mem_9",
+        "title": "Haidilao",
+        "status": false,
+        "image": "/icons/food.svg"
+      },
+      {
+        "id": "fin_mem_10",
+        "title": "Lewis",
+        "status": false,
+        "image": "/icons/shopping.svg"
+      }
+    ],
+    "cart": [
+      {
+        "id": "fin_cart_1",
+        "title": "?",
+        "status": false,
+        "image": "/icons/cart.svg"
+      }
+    ]
+  },
+  "health": {
+    "health": [
+      {
+        "id": "health_1",
+        "title": "Họ & Tên: Phạm Thanh Nghiêm",
+        "status": false,
+        "image": "/icons/user.svg"
+      },
+      {
+        "id": "health_2",
+        "title": "Ngày sinh: 20/01/2002",
+        "status": false,
+        "image": "/icons/calendar.svg"
+      },
+      {
+        "id": "health_3",
+        "title": "Giới tính: Nam",
+        "status": false,
+        "image": "/icons/gender.svg"
+      },
+      {
+        "id": "health_4",
+        "title": "Số điện thoại: 0911.558.539",
+        "status": false,
+        "image": "/icons/phone.svg"
+      },
+      {
+        "id": "health_5",
+        "title": "Quê quán: P. Long Bình, TP. Cần Thơ",
+        "status": false,
+        "image": "/icons/location.svg"
+      },
+      {
+        "id": "health_6",
+        "title": "Chiều cao: 1m65",
+        "status": false,
+        "image": "/icons/height.svg"
+      },
+      {
+        "id": "health_7",
+        "title": "Cân nặng: 90kg",
+        "status": false,
+        "image": "/icons/weight.svg"
+      },
+      {
+        "id": "health_8",
+        "title": "BMI: 33.1 → Béo phì độ 2",
+        "status": false,
+        "image": "/icons/bmi.svg"
+      },
+      {
+        "id": "health_9",
+        "title": "Medical Record: chưa có",
+        "status": false,
+        "image": "/icons/medical.svg"
+      }
+    ]
+  },
+  "jumbled": {
+    "work": [
+      {
+        "id": "jum_work_1",
+        "title": "List Places to Travel",
+        "status": false,
+        "image": "/icons/travel.svg"
+      },
+      {
+        "id": "jum_work_2",
+        "title": "List Places to Food",
+        "status": false,
+        "image": "/icons/food.svg"
+      },
+      {
+        "id": "jum_work_3",
+        "title": "List Films to Watch",
+        "status": false,
+        "image": "/icons/film.svg"
+      },
+      {
+        "id": "jum_work_4",
+        "title": "List Sports to Play",
+        "status": false,
+        "image": "/icons/sport.svg"
+      },
+      {
+        "id": "jum_work_5",
+        "title": "Nian Brand & Nian Channel",
+        "status": false,
+        "image": "/icons/brand.svg"
+      },
+      {
+        "id": "jum_work_6",
+        "title": "Inside/Outside Services",
+        "status": false,
+        "image": "/icons/service.svg"
+      },
+      {
+        "id": "jum_work_7",
+        "title": "Track Relationships",
+        "status": false,
+        "image": "/icons/relationship.svg"
+      },
+      {
+        "id": "jum_work_8",
+        "title": "Các keyword cần nắm (PIS, SAS, …)",
+        "status": false,
+        "image": "/icons/keyword.svg"
+      },
+      {
+        "id": "jum_work_9",
+        "title": "Follow Zalo Contest → Recap Full Workflow & Saved Resource",
+        "status": false,
+        "image": "/icons/contest.svg"
+      },
+      {
+        "id": "jum_work_10",
+        "title": "Hackathon Launch: Google Tunix Hack",
+        "status": false,
+        "image": "/icons/hackathon.svg"
+      },
+      {
+        "id": "jum_work_11",
+        "title": "Vesuvius Challenge - Surface Detection",
+        "status": false,
+        "image": "/icons/challenge.svg"
+      }
+    ],
+    "personal": [
+      {
+        "id": "jum_pers_1",
+        "title": "Kích hoạt app TPBank của Honey",
+        "status": false,
+        "image": "/icons/bank.svg"
+      },
+      {
+        "id": "jum_pers_2",
+        "title": "Kích hoạt app TPBank của Nghiêm",
+        "status": false,
+        "image": "/icons/bank.svg"
+      },
+      {
+        "id": "jum_pers_3",
+        "title": "Check Hàng Ship",
+        "status": false,
+        "image": "/icons/shipping.svg"
+      },
+      {
+        "id": "jum_pers_4",
+        "title": "Keyword: Chain of Thought, Hacker $1",
+        "status": false,
+        "image": "/icons/keyword.svg"
+      },
+      {
+        "id": "jum_pers_5",
+        "title": "Collect Channels",
+        "status": false,
+        "image": "/icons/collect.svg"
+      },
+      {
+        "id": "jum_pers_6",
+        "title": "Collect Resource",
+        "status": false,
+        "image": "/icons/collect.svg"
+      },
+      {
+        "id": "jum_pers_7",
+        "title": "Collect Full Tools AI",
+        "status": false,
+        "image": "/icons/ai.svg"
+      },
+      {
+        "id": "jum_pers_8",
+        "title": "Cover JD All Roles",
+        "status": false,
+        "image": "/icons/job.svg"
+      },
+      {
+        "id": "jum_pers_9",
+        "title": "Mua thêm sách (SEO, Start-up, Selfhelp",
+        "status": false,
+        "image": "/icons/book.svg"
+      },
+      {
+        "id": "jum_pers_10",
+        "title": "Collect Category in Book Store",
+        "status": false,
+        "image": "/icons/book.svg"
+      },
+      {
+        "id": "jum_pers_11",
+        "title": "Handle Wifi (Pass, Speed",
+        "status": false,
+        "image": "/icons/wifi.svg"
+      },
+      {
+        "id": "jum_pers_12",
+        "title": "Control Device in House",
+        "status": false,
+        "image": "/icons/device.svg"
+      },
+      {
+        "id": "jum_pers_13",
+        "title": "SEO basic for Website",
+        "status": false,
+        "image": "/icons/seo.svg"
+      },
+      {
+        "id": "jum_pers_14",
+        "title": "Update Avatar All Service + Project Name",
+        "status": false,
+        "image": "/icons/avatar.svg"
+      },
+      {
+        "id": "jum_pers_15",
+        "title": "Đòi 2m Shopee IATT",
+        "status": false,
+        "image": "/icons/money.svg"
+      }
+    ]
+  },
+  "repository": {
+    "common": [
+      {
+        "id": "repo_com_1",
+        "title": "Key",
+        "status": false,
+        "image": "/icons/key.svg"
+      },
+      {
+        "id": "repo_com_2",
+        "title": "Contact",
+        "status": false,
+        "image": "/icons/contact.svg"
+      },
+      {
+        "id": "repo_com_3",
+        "title": "Icons",
+        "status": false,
+        "image": "/icons/icon.svg"
+      },
+      {
+        "id": "repo_com_4",
+        "title": "News",
+        "status": false,
+        "image": "/icons/news.svg"
+      }
+    ],
+    "harmony": [
+      {
+        "id": "repo_harm_1",
+        "title": "Lifecycle",
+        "status": false,
+        "image": "/icons/lifecycle.svg"
+      },
+      {
+        "id": "repo_harm_2",
+        "title": "Best House",
+        "status": false,
+        "image": "/icons/house.svg"
+      }
+    ],
+    "command": [
+      {
+        "id": "repo_cmd_1",
+        "title": "Terminal",
+        "status": false,
+        "image": "/icons/terminal.svg"
+      },
+      {
+        "id": "repo_cmd_2",
+        "title": "Nodejs",
+        "status": false,
+        "image": "/icons/nodejs.svg"
+      },
+      {
+        "id": "repo_cmd_3",
+        "title": "Nginx",
+        "status": false,
+        "image": "/icons/nginx.svg"
+      },
+      {
+        "id": "repo_cmd_4",
+        "title": "SQL Server",
+        "status": false,
+        "image": "/icons/sql.svg"
+      },
+      {
+        "id": "repo_cmd_5",
+        "title": "MySQL",
+        "status": false,
+        "image": "/icons/mysql.svg"
+      },
+      {
+        "id": "repo_cmd_6",
+        "title": "Docker",
+        "status": false,
+        "image": "/icons/docker.svg"
+      },
+      {
+        "id": "repo_cmd_7",
+        "title": "Portainer",
+        "status": false,
+        "image": "/icons/portainer.svg"
+      },
+      {
+        "id": "repo_cmd_8",
+        "title": "Springboot",
+        "status": false,
+        "image": "/icons/spring.svg"
+      },
+      {
+        "id": "repo_cmd_9",
+        "title": "Linux",
+        "status": false,
+        "image": "/icons/linux.svg"
+      },
+      {
+        "id": "repo_cmd_10",
+        "title": "MongoDB",
+        "status": false,
+        "image": "/icons/mongodb.svg"
+      },
+      {
+        "id": "repo_cmd_11",
+        "title": "AWS",
+        "status": false,
+        "image": "/icons/aws.svg"
+      },
+      {
+        "id": "repo_cmd_12",
+        "title": "Python",
+        "status": false,
+        "image": "/icons/python.svg"
+      }
+    ]
+  },
+  "running": {
+    "working": [
+      {
+        "id": "run_work_1",
+        "title": "Hạ Thu Task",
+        "status": false,
+        "image": "/icons/task.svg"
+      },
+      {
+        "id": "run_work_2",
+        "title": "Lumination Task",
+        "status": false,
+        "image": "/icons/task.svg"
+      },
+      {
+        "id": "run_work_3",
+        "title": "Nianverse Task",
+        "status": false,
+        "image": "/icons/nianverse-task.svg"
+      }
+    ],
+    "life": [
+      {
+        "id": "run_life_1",
+        "title": "Thuế cá nhân",
+        "status": false,
+        "image": "/icons/tax.svg"
+      },
+      {
+        "id": "run_life_2",
+        "title": "Track Member Service & Linked Honey",
+        "status": false,
+        "image": "/icons/track.svg"
+      },
+      {
+        "id": "run_life_3",
+        "title": "Track Hospital",
+        "status": false,
+        "image": "/icons/hospital.svg"
+      },
+      {
+        "id": "run_life_4",
+        "title": "Capture Cards",
+        "status": false,
+        "image": "/icons/card.svg"
+      },
+      {
+        "id": "run_life_5",
+        "title": "ENW492 Return",
+        "status": false,
+        "image": "/icons/return.svg"
+      }
+    ]
+  },
+  "work": {
+    "nianverse_primary": [
+      {
+        "id": "work_nian_1",
+        "title": "Tạo email: nghiem.pham@nianverse.org",
+        "status": false,
+        "image": "/icons/email.svg"
+      },
+      {
+        "id": "work_nian_2",
+        "title": "Hoàn thiện Landing Page",
+        "status": false,
+        "image": "/icons/website.svg"
+      }
+    ],
+    "nianverse_system": [
+      {
+        "id": "work_sys_1",
+        "title": "Proposal",
+        "status": false,
+        "image": "/icons/document.svg"
+      },
+      {
+        "id": "work_sys_2",
+        "title": "Document",
+        "status": false,
+        "image": "/icons/document.svg"
+      },
+      {
+        "id": "work_sys_3",
+        "title": "Figma",
+        "status": false,
+        "image": "/icons/figma.svg"
+      },
+      {
+        "id": "work_sys_4",
+        "title": "Github",
+        "status": false,
+        "image": "/icons/github.svg"
+      },
+      {
+        "id": "work_sys_5",
+        "title": "Postman",
+        "status": false,
+        "image": "/icons/postman.svg"
+      },
+      {
+        "id": "work_sys_6",
+        "title": "Cloud",
+        "status": false,
+        "image": "/icons/cloud.svg"
+      },
+      {
+        "id": "work_sys_7",
+        "title": "Domain",
+        "status": false,
+        "image": "/icons/domain.svg"
+      },
+      {
+        "id": "work_sys_8",
+        "title": "Hosting",
+        "status": false,
+        "image": "/icons/server.svg"
+      }
+    ],
+    "nianverse_brain": [
+      {
+        "id": "work_brain_1",
+        "title": "Daily Tracking: gmail, tin nhắn, subscription, …",
+        "status": false,
+        "image": "/icons/track.svg"
+      },
+      {
+        "id": "work_brain_2",
+        "title": "Check Jumbled task (freedoom, confirmed)",
+        "status": false,
+        "image": "/icons/check.svg"
+      },
+      {
+        "id": "work_brain_3",
+        "title": "Check công việc: company, project, service",
+        "status": false,
+        "image": "/icons/check.svg"
+      },
+      {
+        "id": "work_brain_4",
+        "title": "Check education: ielts, master, phd, research",
+        "status": false,
+        "image": "/icons/check.svg"
+      },
+      {
+        "id": "work_brain_5",
+        "title": "Check activity: tham gia event, ws. thi contest, học lấy certificate",
+        "status": false,
+        "image": "/icons/check.svg"
+      },
+      {
+        "id": "work_brain_6",
+        "title": "Check finance: subscription, loan, plan payment, history wallet",
+        "status": false,
+        "image": "/icons/check.svg"
+      },
+      {
+        "id": "work_brain_7",
+        "title": "Check Biography: link social, nian brand, nian channel, password, relationship",
+        "status": false,
+        "image": "/icons/check.svg"
+      },
+      {
+        "id": "work_brain_8",
+        "title": "Check Anthology: kiến thức các thứ, …",
+        "status": false,
+        "image": "/icons/check.svg"
+      },
+      {
+        "id": "work_brain_9",
+        "title": "Check Health: thông tin cá nhân, tim gan, phổi, …",
+        "status": false,
+        "image": "/icons/check.svg"
+      },
+      {
+        "id": "work_brain_10",
+        "title": "Check Repository: house, clothes, device, motorbike, cmd, saved, service used, master storage (image, source code, git, drive, postman, figma, …) giúp mình ko care Macbook Storage và Phone Storage nữa.",
+        "status": false,
+        "image": "/icons/check.svg"
+      }
+    ],
+    "nianverse_hunting": [
+      {
+        "id": "work_hunt_1",
+        "title": "Master Plan",
+        "status": false,
+        "image": "/icons/plan.svg"
+      }
+    ],
+    "lumination_primary": [
+      {
+        "id": "work_lumi_1",
+        "title": "Check 2 con robot",
+        "status": false,
+        "image": "/icons/robot.svg"
+      },
+      {
+        "id": "work_lumi_2",
+        "title": "Master Plan",
+        "status": false,
+        "image": "/icons/plan.svg"
+      }
+    ],
+    "lumination_zeedaata": [
+      {
+        "id": "work_zee_1",
+        "title": "APIs public",
+        "status": false,
+        "image": "/icons/api.svg"
+      },
+      {
+        "id": "work_zee_2",
+        "title": "Chat Widget Integration",
+        "status": false,
+        "image": "/icons/chat.svg"
+      },
+      {
+        "id": "work_zee_3",
+        "title": "Cleanup Accounts",
+        "status": false,
+        "image": "/icons/cleanup.svg"
+      },
+      {
+        "id": "work_zee_4",
+        "title": "Agent Property",
+        "status": false,
+        "image": "/icons/agent.svg"
+      },
+      {
+        "id": "work_zee_5",
+        "title": "Multi Modules",
+        "status": false,
+        "image": "/icons/module.svg"
+      },
+      {
+        "id": "work_zee_6",
+        "title": "Widget Extension",
+        "status": false,
+        "image": "/icons/widget.svg"
+      },
+      {
+        "id": "work_zee_7",
+        "title": "FAQs Page",
+        "status": false,
+        "image": "/icons/faq.svg"
+      },
+      {
+        "id": "work_zee_8",
+        "title": "Reward System",
+        "status": false,
+        "image": "/icons/reward.svg"
+      },
+      {
+        "id": "work_zee_9",
+        "title": "Agentic RAG",
+        "status": false,
+        "image": "/icons/ai.svg"
+      },
+      {
+        "id": "work_zee_10",
+        "title": "Update RAG",
+        "status": false,
+        "image": "/icons/update.svg"
+      },
+      {
+        "id": "work_zee_11",
+        "title": "Knowledge Graph",
+        "status": false,
+        "image": "/icons/graph.svg"
+      }
+    ],
+    "lumination_hsu": [
+      {
+        "id": "work_hsu_1",
+        "title": "?",
+        "status": false,
+        "image": "/icons/university.svg"
+      }
+    ],
+    "lumination_customer": [
+      {
+        "id": "work_cust_1",
+        "title": "?",
+        "status": false,
+        "image": "/icons/customer.svg"
+      }
+    ],
+    "project_ielts": [
+      {
+        "id": "work_proj_ielts_1",
+        "title": "Master Plan",
+        "status": false,
+        "image": "/icons/plan.svg"
+      }
+    ],
+    "project_ecoka": [
+      {
+        "id": "work_proj_ecoka_1",
+        "title": "Master Plan",
+        "status": false,
+        "image": "/icons/plan.svg"
+      }
+    ],
+    "project_hathu": [
+      {
+        "id": "work_proj_hathu_1",
+        "title": "Master Plan",
+        "status": false,
+        "image": "/icons/plan.svg"
+      }
+    ],
+    "service_brand": [
+      {
+        "id": "work_serv_1",
+        "title": "Master Plan",
+        "status": false,
+        "image": "/icons/plan.svg"
+      }
+    ]
+  }
+}

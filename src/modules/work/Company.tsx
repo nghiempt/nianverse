@@ -1,117 +1,151 @@
-import ComponentCard from "@/components/common/ComponentCard";
-import Input from "@/components/common/InputField";
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Company",
-  description: "This is Next.js",
-};
+import { useEffect, useState } from "react";
+import CategorySection from "@/components/modules/CategorySection";
+
+interface ModuleItem {
+  id: string;
+  title: string;
+  status: boolean;
+  image: string;
+}
+
+interface CompanyData {
+  nianverse_primary: ModuleItem[];
+  nianverse_system: ModuleItem[];
+  nianverse_brain: ModuleItem[];
+  nianverse_hunting: ModuleItem[];
+  lumination_primary: ModuleItem[];
+  lumination_zeedaata: ModuleItem[];
+  lumination_hsu: ModuleItem[];
+  lumination_customer: ModuleItem[];
+}
 
 export default function CompanyClient() {
+  const [data, setData] = useState<CompanyData>({
+    nianverse_primary: [],
+    nianverse_system: [],
+    nianverse_brain: [],
+    nianverse_hunting: [],
+    lumination_primary: [],
+    lumination_zeedaata: [],
+    lumination_hsu: [],
+    lumination_customer: [],
+  });
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("/api/modules?module=work");
+      if (response.ok) {
+        const result = await response.json();
+        setData({
+          nianverse_primary: result.nianverse_primary || [],
+          nianverse_system: result.nianverse_system || [],
+          nianverse_brain: result.nianverse_brain || [],
+          nianverse_hunting: result.nianverse_hunting || [],
+          lumination_primary: result.lumination_primary || [],
+          lumination_zeedaata: result.lumination_zeedaata || [],
+          lumination_hsu: result.lumination_hsu || [],
+          lumination_customer: result.lumination_customer || [],
+        });
+      }
+    } catch (error) {
+      console.error("Failed to fetch company data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center p-8">
+        <div className="text-gray-500">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div className="space-y-6">
-          <ComponentCard title="Nianverse - Primary">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Tạo email: nghiem.pham@nianverse.org"} />
-                <Input type="text" defaultValue={"Hoàn thiện Landing Page"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Nianverse - Primary"
+            items={data.nianverse_primary}
+            module="work"
+            category="nianverse_primary"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Nianverse - Primary - Complete System">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Proposal"} />
-                <Input type="text" defaultValue={"Document"} />
-                <Input type="text" defaultValue={"Figma"} />
-                <Input type="text" defaultValue={"Github"} />
-                <Input type="text" defaultValue={"Postman"} />
-                <Input type="text" defaultValue={"Cloud"} />
-                <Input type="text" defaultValue={"Domain"} />
-                <Input type="text" defaultValue={"Hosting"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Nianverse - Primary - Complete System"
+            items={data.nianverse_system}
+            module="work"
+            category="nianverse_system"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Nianverse - Primary - Current Brain">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Daily Tracking: gmail, tin nhắn, subscription, …"} />
-                <Input type="text" defaultValue={"Check Jumbled task (freedoom, confirmed)"} />
-                <Input type="text" defaultValue={"Check công việc: company, project, service"} />
-                <Input type="text" defaultValue={"Check education: ielts, master, phd, research"} />
-                <Input type="text" defaultValue={"Check activity: tham gia event, ws. thi contest, học lấy certificate"} />
-                <Input type="text" defaultValue={"Check finance: subscription, loan, plan payment, history wallet"} />
-                <Input type="text" defaultValue={"Check Biography: link social, nian brand, nian channel, password, relationship"} />
-                <Input type="text" defaultValue={"Check Anthology: kiến thức các thứ, …"} />
-                <Input type="text" defaultValue={"Check Health: thông tin cá nhân, tim gan, phổi, …"} />
-                <Input type="text" defaultValue={"Check Repository: house, clothes, device, motorbike, cmd, saved, service used, master storage (image, source code, git, drive, postman, figma, …) giúp mình ko care Macbook Storage và Phone Storage nữa."} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Nianverse - Primary - Current Brain"
+            items={data.nianverse_brain}
+            module="work"
+            category="nianverse_brain"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Nianverse - Hunting Kit">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Master Plan"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Nianverse - Hunting Kit"
+            items={data.nianverse_hunting}
+            module="work"
+            category="nianverse_hunting"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Lumination - Primary">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"Check 2 con robot"} />
-                <Input type="text" defaultValue={"Master Plan"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Lumination - Primary"
+            items={data.lumination_primary}
+            module="work"
+            category="lumination_primary"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Lumination - Zeedaata">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"APIs public"} />
-                <Input type="text" defaultValue={"Chat Widget Integration"} />
-                <Input type="text" defaultValue={"Cleanup Accounts"} />
-                <Input type="text" defaultValue={"Agent Property"} />
-                <Input type="text" defaultValue={"Multi Modules"} />
-                <Input type="text" defaultValue={"Widget Extension"} />
-                <Input type="text" defaultValue={"FAQs Page"} />
-                <Input type="text" defaultValue={"Reward System"} />
-                <Input type="text" defaultValue={"Agentic RAG"} />
-                <Input type="text" defaultValue={"Update RAG"} />
-                <Input type="text" defaultValue={"Knowledge Graph"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Lumination - Zeedaata"
+            items={data.lumination_zeedaata}
+            module="work"
+            category="lumination_zeedaata"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Lumination - HSU">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"?"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Lumination - HSU"
+            items={data.lumination_hsu}
+            module="work"
+            category="lumination_hsu"
+            onUpdate={fetchData}
+          />
         </div>
         <div className="space-y-6">
-          <ComponentCard title="Lumination - Customer Care">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Input type="text" defaultValue={"?"} />
-              </div>
-            </div>
-          </ComponentCard>
+          <CategorySection
+            title="Lumination - Customer Care"
+            items={data.lumination_customer}
+            module="work"
+            category="lumination_customer"
+            onUpdate={fetchData}
+          />
         </div>
       </div>
     </div>
   );
 }
+
