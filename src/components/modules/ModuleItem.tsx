@@ -96,7 +96,7 @@ export default function ModuleItem({
                     type="text"
                     value={editTitle}
                     onChange={(e) => setEditTitle(e.target.value)}
-                    className="flex-1 rounded border border-gray-300 px-2 h-10 text-sm focus:border-blue-500 focus:outline-none"
+                    className="flex-1 rounded border border-gray-300 px-2 h-10 text-sm focus:border-gray-500 focus:outline-none"
                     autoFocus
                     onKeyDown={(e) => {
                         if (e.key === "Enter") handleEdit();
@@ -105,7 +105,7 @@ export default function ModuleItem({
                 />
                 <button
                     onClick={handleEdit}
-                    className="rounded bg-blue-500 px-3 h-10 text-sm text-white hover:bg-blue-600"
+                    className="rounded bg-gray-700 px-3 h-10 text-sm text-white hover:bg-gray-800"
                 >
                     <CheckCheck size={18} />
                 </button>

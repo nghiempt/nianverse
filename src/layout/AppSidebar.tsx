@@ -90,15 +90,15 @@ const AppSidebar: React.FC = () => {
     navItems: NavItem[],
     menuType: "main" | "others"
   ) => (
-    <ul className="flex flex-col gap-4">
+    <ul className="flex flex-col gap-2">
       {navItems.map((nav, index) => (
         <li key={nav.name}>
           {nav.subItems ? (
             <button
               onClick={() => handleSubmenuToggle(index, menuType)}
               className={`menu-item group  ${openSubmenu?.type === menuType && openSubmenu?.index === index
-                ? "menu-item-active"
-                : "menu-item-inactive"
+                ? "menu-item-active !py-3 !bg-gray-100 !text-gray-700"
+                : "menu-item-inactive !py-3"
                 } cursor-pointer ${!isExpanded && !isHovered
                   ? "lg:justify-center"
                   : "lg:justify-start"
@@ -106,7 +106,7 @@ const AppSidebar: React.FC = () => {
             >
               <span
                 className={` ${openSubmenu?.type === menuType && openSubmenu?.index === index
-                  ? "menu-item-icon-active"
+                  ? "menu-item-icon-active !text-gray-700"
                   : "menu-item-icon-inactive"
                   }`}
               >
@@ -119,7 +119,7 @@ const AppSidebar: React.FC = () => {
                 <ChevronDownIcon
                   className={`ml-auto w-5 h-5 transition-transform duration-200  ${openSubmenu?.type === menuType &&
                     openSubmenu?.index === index
-                    ? "rotate-180 text-brand-500"
+                    ? "rotate-180 !text-gray-700"
                     : ""
                     }`}
                 />
@@ -129,12 +129,12 @@ const AppSidebar: React.FC = () => {
             nav.path && (
               <Link
                 href={nav.path}
-                className={`menu-item group ${isActive(nav.path) ? "menu-item-active" : "menu-item-inactive"
+                className={`menu-item group ${isActive(nav.path) ? "menu-item-active !bg-gray-100 !text-gray-700 !py-3" : "menu-item-inactive !py-3"
                   }`}
               >
                 <span
                   className={`${isActive(nav.path)
-                    ? "menu-item-icon-active"
+                    ? "menu-item-icon-active !text-gray-700"
                     : "menu-item-icon-inactive"
                     }`}
                 >
@@ -165,7 +165,7 @@ const AppSidebar: React.FC = () => {
                     <Link
                       href={subItem.path}
                       className={`menu-dropdown-item ${isActive(subItem.path)
-                        ? "menu-dropdown-item-active"
+                        ? "menu-dropdown-item-active !bg-gray-100 !text-gray-700"
                         : "menu-dropdown-item-inactive"
                         }`}
                     >

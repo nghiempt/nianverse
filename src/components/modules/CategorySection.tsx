@@ -82,7 +82,7 @@ export default function CategorySection({
                             value={newItemTitle}
                             onChange={(e) => setNewItemTitle(e.target.value)}
                             placeholder="Enter item title..."
-                            className="flex-1 rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+                            className="flex-1 rounded border border-gray-300 px-3 py-2 text-sm focus:border-gray-500 focus:outline-none"
                             autoFocus
                             onKeyDown={(e) => {
                                 if (e.key === "Enter") handleAddItem();
@@ -94,7 +94,7 @@ export default function CategorySection({
                         />
                         <button
                             onClick={handleAddItem}
-                            className="rounded bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-600"
+                            className="rounded bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
                         >
                             Add
                         </button>
@@ -111,7 +111,7 @@ export default function CategorySection({
                 ) : (
                     <button
                         onClick={() => setIsAdding(true)}
-                        className="flex w-12 h-12 items-center justify-center gap-2 rounded-lg border-1 border-dashed border-gray-300 p-3 text-sm font-medium text-gray-600 transition-colors hover:border-blue-500 hover:text-blue-600"
+                        className="flex w-12 h-12 items-center justify-center gap-2 rounded-lg border-1 border-dashed border-gray-300 p-3 text-sm font-medium text-gray-600 transition-colors hover:border-gray-500 hover:text-gray-600"
                     >
                         <Plus size={18} />
                     </button>
